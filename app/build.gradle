@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'realm-android'
+    //id 'realm-android'
     //id 'com.google.gms.google-services'
     //id 'com.mapbox.maps.token'
 }
@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 //    configurations {
 //        all { // You should exclude one of them not both of them
 //            exclude group: "com.mapbox.mapboxsdk", module: "mapbox-android-core:0.2.1"
@@ -57,10 +60,16 @@ dependencies {
     // Lottie dependency
     implementation 'com.airbnb.android:lottie:3.4.0'
 
-    implementation 'com.google.android.gms:play-services-maps:18.0.0'
-    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'androidx.annotation:annotation:1.6.0'
+    //implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    //implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-    implementation 'com.google.maps.android:android-maps-utils:1.0.0'
+    //implementation 'com.google.android.gms:play-services-maps:18.0.0'
+    //implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    //implementation 'com.google.maps.android:android-maps-utils:1.0.0'
 
     implementation 'com.squareup.retrofit2:retrofit:2.0.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.0'

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.test.app">
+    package="com.test.app" >
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Required only when requesting background location access on Android 10 (API level 29) -->
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:name=".LoadMaps.AppConfig"
@@ -17,37 +12,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".LoadMaps.Activities.HomeActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".LoadMaps.Activities.PolyLineDrawActivity" android:exported="true">
-        </activity>
+        android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoadMaps.Activities.SplashScreen"
-            android:exported="true"
-            android:screenOrientation="portrait">
+            android:name=".LoadMaps.CountryDetailsPage.CountryDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoadMaps.HomeActivity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoadMaps.SplashScreen.SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoadMaps.Activities.RegisterActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name=".LoadMaps.Activities.LoginActivity"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDqA2ZppI-OVM5EwOqCXX4uSDv49r1ZebQ" />
-
-        <service android:name=".LoadMaps.Service.BackgroundService" />
     </application>
 
 </manifest>
